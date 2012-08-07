@@ -1,6 +1,11 @@
-# Hms
+# HMS
 
-TODO: Write a gem description
+Models construction, parsing and formatting durations in hh::mm::ss format.
+
+This is an extraction from the [cre-stats](http://github.com/nerab/cre-stats) project.
+
+[![Build Status](https://secure.travis-ci.org/nerab/hms.png?branch=master)](http://travis-ci.org/nerab/hms)
+
 
 ## Installation
 
@@ -18,7 +23,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    d = HMS::Duration.new(42)
+    puts "Podcast episode length is #{d}." # 42
+
+    d = HMS::Duration.new('32:16:08')
+    puts "#{d} equals to #{d.to_i} seconds" # 116168
+
+See [tests](/nerab/hms/blob/master/test/unit) for advanced usage.
 
 ## Contributing
 
