@@ -103,8 +103,16 @@ module HMS
       op(:*, other)
     end
 
+    def **(other)
+      op(:**, other)
+    end
+
     def /(other)
       op(:/, other)
+    end
+
+    def %(other)
+      op(:%, other)
     end
 
     private

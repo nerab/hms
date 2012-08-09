@@ -256,6 +256,30 @@ class TestDuration < MiniTest::Unit::TestCase
     assert_compare_longer(-23, -42)
   end
 
+  def test_operator_addition
+    assert_operator(10, :+, 6, 4)
+  end
+
+  def test_operator_subtraction
+    assert_operator(18, :-, 22, 4)
+  end
+
+  def test_operator_multiplication
+    assert_operator(12, :*, 3, 4)
+  end
+
+  def test_operator_division
+    assert_operator(3, :/, 12, 4)
+  end
+
+  def test_operator_modulus
+    assert_operator(1, :%, 15, 7)
+  end
+
+  def test_operator_exponent
+    assert_operator(81, :**, 3, 4)
+  end
+
   private
 
   def assert_construction(str, int)
@@ -292,5 +316,9 @@ class TestDuration < MiniTest::Unit::TestCase
     assert(0 < (Duration.new(left) <=> Duration.new(right)))
     assert(0 < (left <=> Duration.new(right)))
     assert(0 < (Duration.new(left) <=> right))
+  end
+
+  def assert_operator(expected, op, left, right)
+    assert_equal(expected, Duration.new(left).send(op, Duration.new(right)))
   end
 end
