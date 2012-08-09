@@ -32,6 +32,13 @@ module HMS
     end
 
     #
+    # returns the total duration in seconds
+    #
+    def to_f
+      @seconds.to_f
+    end
+
+    #
     # returns the hours part of the total duration
     #
     def hours

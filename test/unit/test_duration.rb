@@ -280,6 +280,10 @@ class TestDuration < MiniTest::Unit::TestCase
     assert_operator(81, :**, 3, 4)
   end
 
+  def test_coerce_float
+    assert_equal(12, Math.sqrt(Duration.new(144)))
+  end
+
   private
 
   def assert_construction(str, int)
